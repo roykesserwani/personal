@@ -1,0 +1,29 @@
+{
+  "image": "https://media.licdn.com/dms/image/C5603AQEGswIRoSF-wg/profile-displayphoto-shrink_200_200/0?e=1564012800&v=beta&t=1y1uI6zbPV_IzTpsU829cF2lDdAWKd7-nwWBycQzKuQ",
+  "name": "Roy Kesserwani",
+  "title": "Software Engineer",
+  "description": "I am a passionate developer that likes to work out and code professional. Matt sucks ass and he is a punk ass",
+  "skills": ["Javascript", "HTML", "Kubernetes"],
+  "links": [
+    {
+    "linkedin": "https://www.linkedin.com/in/roykesserwani/",
+    "twitter": "https://twitter.com"
+    }
+  ],
+  "nav": [
+    {
+      "icon": "",
+      "text": "Home",
+      "current": true
+    },
+    {
+      "icon": "",
+      "text": "Blog"
+    },
+    {
+      "icon": "",
+      "text": "Documentation"
+    }
+  ]
+  
+}

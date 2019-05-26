@@ -1,9 +1,48 @@
 import React from 'react';
 import './App.css';
 import '@zendeskgarden/react-chrome/dist/styles.css';
+import '@zendeskgarden/react-buttons/dist/styles.css';
+
 import { ThemeProvider } from '@zendeskgarden/react-theming';
-import { Chrome, Body, Sidebar, Content, Main } from '@zendeskgarden/react-chrome';
-import HomeProfileCard from './components/home/HomeProfileCard/HomeProfileCard'
+import { Chrome, Body, Header, HeaderItem, HeaderItemIcon, HeaderItemText, Sidebar, Content, Main, Nav, NavItem, NavItemIcon, NavItemText } from '@zendeskgarden/react-chrome';
+import styled from 'styled-components'
+import { ReactComponent as MenuIcon } from '@zendeskgarden/svg-icons/src/16/menu-stroke.svg';
+import ResponsiveSideBar from './components/home/SideBar/index'
+import ProfileCard from "./components/home/ProfileCard/ProfileCard";
+import {ReactComponent as HomeIcon} from "@zendeskgarden/svg-icons/src/16/home-fill.svg";
+import {ReactComponent as BlogIcon} from "@zendeskgarden/svg-icons/src/16/file-document-stroke.svg";
+import {ReactComponent as CodeIcon} from "@zendeskgarden/svg-icons/src/16/markup-stroke.svg";
+import ResponsiveNav from "./components/home/SideBar/ResponsiveNav";
+import config from './config.json';
+
+
+const MenuIconWrapper = styled(MenuIcon)`
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    
+`;
+
+const ResponsiveContent = styled(Content)`
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+    }
+    
+`;
+
+
+const ResponsiveHeader = styled(Header)`
+    @media screen and (max-width: 700px) {
+       position: relative;
+       top: 0;
+       width: 100%;
+    }
+    
+     @media screen and (min-width: 700px) {
+       display: none;
+    }
+`;
 
 
 
@@ -12,21 +51,38 @@ function App() {
       <ThemeProvider>
         <Chrome>
           <Body>
-            <Content>
-              <Sidebar style={{ padding: 28 }}>
-                  <HomeProfileCard
-                    image       = { 'https://media.licdn.com/dms/image/C5603AQEGswIRoSF-wg/profile-displayphoto-shrink_200_200/0?e=1564012800&v=beta&t=1y1uI6zbPV_IzTpsU829cF2lDdAWKd7-nwWBycQzKuQ' }
-                    name        = { 'Roy Kesserwani' }
-                    title       = { 'Software Engineer' }
-                    description = { 'I am a passionate developer that likes to work out and code professionaly' }
-                    skills      = {[ 'Javascript', 'HTML', 'Kubernetes', 'html' ]}
-                    links       = { { linkedin: 'https://www.linkedin.com/in/roykesserwani/', twitter: 'https://www.linkedin.com/in/roykesserwani/'}}
-                  >
-                  </HomeProfileCard>
-              </Sidebar>
-              <Main>
-              </Main>
-            </Content>
+              <ResponsiveHeader>
+                  <HeaderItem>
+                      <HeaderItemIcon>
+                          <MenuIconWrapper />
+                      </HeaderItemIcon>
+                      <HeaderItemText clipped>Products</HeaderItemText>
+                  </HeaderItem>
+              </ResponsiveHeader>
+
+
+              <ResponsiveContent>
+                <ResponsiveSideBar>
+                    <ProfileCard
+                        image       = { config.image }
+                        name        = { config.name }
+                        title       = { config.title }
+                        description = { config.description }
+                        skills      = { config.skills }
+                        links       = { config.links }
+                    />
+                    <ResponsiveNav
+                        expanded
+                        items={ config.nav }
+                        collapseOrder={-1}
+                    />
+                  </ResponsiveSideBar>
+                  <Main>
+                      <body>
+                        <p>Hello how are you doing ?</p>
+                      </body>
+                  </Main>
+            </ResponsiveContent>
           </Body>
         </Chrome>
       </ThemeProvider>

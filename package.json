@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@zendeskgarden/react-buttons": "^3.9.8",
     "@zendeskgarden/react-chrome": "^4.6.10",
     "@zendeskgarden/react-theming": "^3.2.1",
     "@zendeskgarden/react-typography": "^0.4.0",
+    "@zendeskgarden/svg-icons": "^6.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

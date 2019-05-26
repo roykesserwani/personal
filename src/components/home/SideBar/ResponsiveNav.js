@@ -6,9 +6,10 @@ import {Nav, NavItem, NavItemIcon, NavItemText} from "@zendeskgarden/react-chrom
 
 const ResponsiveNavWrapper = styled(Nav)`
     width: 100%;
+    order: unset;
     @media screen and (max-width: 700px) {
-       order: ${ props => props.collapseOrder } 
-    }  
+        order: -1
+    }
 `;
 
 

@@ -9,10 +9,10 @@ const ResponsiveSideBarWrapper = styled(Sidebar)`
        height: auto;
        padding: 0px;
     }
-    padding: 28px;
-    width: 400px;
     display: flex;
     flex-direction: column;
+    padding: 28px;
+    width: 400px;
 `;
 
 

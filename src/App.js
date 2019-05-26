@@ -64,17 +64,16 @@ function App() {
               <ResponsiveContent>
                 <ResponsiveSideBar>
                     <ProfileCard
-                        image       = { config.image }
-                        name        = { config.name }
-                        title       = { config.title }
-                        description = { config.description }
-                        skills      = { config.skills }
-                        links       = { config.links }
+                        image         = { config.image }
+                        name          = { config.name }
+                        title         = { config.title }
+                        description   = { config.description }
+                        skills        = { config.skills }
+                        links         = { config.links }
                     />
                     <ResponsiveNav
                         expanded
-                        items={ config.nav }
-                        collapseOrder={-1}
+                        items         = { config.nav }
                     />
                   </ResponsiveSideBar>
                   <Main>

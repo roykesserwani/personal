@@ -60,7 +60,6 @@ function App() {
                   </HeaderItem>
               </ResponsiveHeader>
 
-
               <ResponsiveContent>
                 <ResponsiveSideBar>
                     <ProfileCard
